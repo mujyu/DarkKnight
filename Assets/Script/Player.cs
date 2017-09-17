@@ -19,10 +19,5 @@ public class Player : MonoBehaviour
 
         // 移動する向きとスピードを代入する
         GetComponent<Rigidbody2D>().velocity = direction * speed;
-
-        if (Input.anyKeyDown)
-        {
-            Debug.Log("anykey");
-        }
     }
 }
