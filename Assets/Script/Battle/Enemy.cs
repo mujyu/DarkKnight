@@ -6,9 +6,13 @@ public class Enemy : MonoBehaviour
     public int hp = 20;
     // Spaceshipコンポーネント
     Spaceship spaceship;
+    //Scoreコンポーネント
+    Score score = new Score();
     // Bulletコンポーネント
     Bullet bullet = new Bullet();
     int count = 0;
+    public int Boss1AttackScore = Bullet.power;
+    public int Boss1BombScore = 50;
     public int turningPoint = 500;//何カウントで上下移動の折り返しをするかを決める変数
 
     IEnumerator Start()
@@ -30,7 +34,6 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(count);
         if (0 <= count && count <= turningPoint)
         {
             spaceship.Move(transform.up * -1);
@@ -56,17 +59,21 @@ public class Enemy : MonoBehaviour
         if (layerName != "Bullet(Player)") return;
 
         // ヒットポイントを減らす
-        hp -= bullet.power;
+        hp -= Bullet.power;
 
         // 弾の削除
         Destroy(c.gameObject);
 
+        //スコアゲット
+        Score.score += Boss1AttackScore;
+
         // ヒットポイントが0以下であれば
         if (hp <= 0)
         {
+            //スコア加算
+            Score.score += Boss1BombScore;
             // 爆発
             spaceship.Explosion();
-
             // エネミーの削除
             Destroy(gameObject);
         }else

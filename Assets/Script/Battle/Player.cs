@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
@@ -28,16 +29,32 @@ public class Player : MonoBehaviour
     void Update()
     {
         // 右・左
-        float x = Input.GetAxisRaw("Horizontal");
+        //float x = Input.GetAxisRaw("Horizontal");
 
         // 上・下
-        float y = Input.GetAxisRaw("Vertical");
+        //float y = Input.GetAxisRaw("Vertical");
 
         // 移動する向きを求める
-        Vector2 direction = new Vector2(x, y).normalized;
+        //Vector2 direction = new Vector2(x, y).normalized;
 
         // 移動
-        spaceship.Move(direction);
+        //spaceship.Move(direction);
+
+        //スマホ向けインターフェース
+        //if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        //{
+            // 右・左
+            float xC = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+
+            // 上・下
+            float yC = CrossPlatformInputManager.GetAxisRaw("Vertical");
+
+            // 移動する向きを求める
+            Vector2 directionC = new Vector2(xC, yC);
+
+            // 移動
+            spaceship.Move(directionC);
+        //}
     }
 
     // ぶつかった瞬間に呼び出される
