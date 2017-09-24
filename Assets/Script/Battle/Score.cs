@@ -60,6 +60,6 @@ public class Score : MonoBehaviour
         PlayerPrefs.Save();
 
         // ゲーム開始前の状態に戻す
-        Initialize();
+        Invoke("Initialize",3.7f);
     }
 }
