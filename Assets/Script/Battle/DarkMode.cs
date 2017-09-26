@@ -9,10 +9,4 @@ public class DarkMode : MonoBehaviour {
     
     public static bool darkModeIs = false;
 
-	public void OnClick()
-    {
-        if (darkModeIs == false) darkModeIs = true;
-        else if (darkModeIs == true) darkModeIs = false;
-    }
-
 }

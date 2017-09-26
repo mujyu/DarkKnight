@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static int playerHP = 50;
     // Spaceshipコンポーネント
     Spaceship spaceship;
     public static bool shootingIs = true;
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
             // 移動
             Move(directionC);
         //}
+
     }
 
     // 機体の移動
@@ -95,19 +98,24 @@ public class Player : MonoBehaviour
             Destroy(c.gameObject);
         }
 
-        // レイヤー名がBullet (Enemy)またはEnemyの場合は爆発
+        // レイヤー名がBullet (Enemy)またはEnemyの場合は体力を減らす
         if (layerName == "Bullet(Enemy)" || layerName == "Enemy")
         {
-            // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
-            FindObjectOfType<Manager>().GameOver();
+            playerHP -= 1;
+            if (playerHP <= 0)
+            {
+                // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+                FindObjectOfType<Manager>().GameOver();
 
-            // 爆発する
-            spaceship.Explosion();
+                // 爆発する
+                spaceship.Explosion();
 
-            // プレイヤーを削除
-            Destroy(gameObject);
+                // プレイヤーを削除
+                Destroy(gameObject);
+            }
         }
     }
+    //DestroyAreaから出た瞬間に爆発する
     void OnTriggerExit2D(Collider2D c)
     {
         // レイヤー名を取得

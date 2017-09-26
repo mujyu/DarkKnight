@@ -42,6 +42,9 @@ public class Score : MonoBehaviour
         // スコアを0に戻す
         score = 0;
 
+        //ダークモードをfalseにする
+        DarkMode.darkModeIs = false;
+
         // ハイスコアを取得する。保存されてなければ0を取得する。
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
     }
