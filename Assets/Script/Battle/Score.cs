@@ -9,6 +9,9 @@ public class Score : MonoBehaviour
     // ハイスコアを表示するGUIText
     public Text highScoreText;
 
+    //残り体力の表示
+    public Text playerHPText;
+
     // スコア
     public static int score;
 
@@ -34,6 +37,8 @@ public class Score : MonoBehaviour
         // スコア・ハイスコアを表示する
         scoreText.text = score.ToString();
         highScoreText.text = "HighScore : " + highScore.ToString();
+        //残り体力を表示
+        playerHPText.text = "HP:" + Player.playerHP.ToString();
     }
 
     // ゲーム開始前の状態に戻す

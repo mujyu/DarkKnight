@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    public int AttackPower = 2;
     public int hp = 20;
     // Spaceshipコンポーネント
     Spaceship spaceship;

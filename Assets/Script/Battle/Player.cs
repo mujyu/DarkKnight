@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public static int playerHP = 50;
+
+    Enemy enemy = new Enemy();
     // Spaceshipコンポーネント
     Spaceship spaceship;
     public static bool shootingIs = true;
@@ -59,7 +61,6 @@ public class Player : MonoBehaviour
             // 移動
             Move(directionC);
         //}
-
     }
 
     // 機体の移動
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
         // レイヤー名がBullet (Enemy)またはEnemyの場合は体力を減らす
         if (layerName == "Bullet(Enemy)" || layerName == "Enemy")
         {
-            playerHP -= 1;
+            playerHP -= enemy.AttackPower;
             if (playerHP <= 0)
             {
                 // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
