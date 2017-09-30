@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour
         {
             //スコア加算
             Score.score += Boss1BombScore;
-
             // 爆発
             spaceship.Explosion();
             // エネミーの削除

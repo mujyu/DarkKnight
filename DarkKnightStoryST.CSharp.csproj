@@ -102,6 +102,7 @@
     <Compile Include="Assets\Script\Battle\Explosion.cs" />
     <Compile Include="Assets\Script\Battle\HPBar.cs" />
     <Compile Include="Assets\Script\Battle\Manager.cs" />
+    <Compile Include="Assets\Script\Battle\PlayDarkFrame.cs" />
     <Compile Include="Assets\Script\Battle\Player.cs" />
     <Compile Include="Assets\Script\Battle\Score.cs" />
     <Compile Include="Assets\Script\Battle\Spaceship.cs" />
