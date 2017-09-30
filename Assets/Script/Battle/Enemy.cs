@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    public int AttackPower = 2;
+    public int AttackPower = 700;
     public int hp = 20;
     // Spaceshipコンポーネント
     Spaceship spaceship;
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
         {
             //スコア加算
             Score.score += Boss1BombScore;
+
             // 爆発
             spaceship.Explosion();
             // エネミーの削除

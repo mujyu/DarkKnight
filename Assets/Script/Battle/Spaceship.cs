@@ -11,9 +11,7 @@ public class Spaceship : MonoBehaviour
 
     // 弾のPrefab
     public GameObject bullet;
-
-    // 弾を撃つかどうか
-    public bool canShot;
+    
 
     // 爆発のPrefab
     public GameObject explosion;

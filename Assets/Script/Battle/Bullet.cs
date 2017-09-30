@@ -25,5 +25,5 @@ public class Bullet : MonoBehaviour {
             speed = 1;
         }
     }
-
+    
 }

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public static int playerHP = 50;
+    public static int jikiHP = 5000;
+
+    public static int playerHP = jikiHP;
 
     Enemy enemy = new Enemy();
     // Spaceshipコンポーネント
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
             // 移動
             Move(directionC);
         //}
+        DarkMode.DarkDamage();
     }
 
     // 機体の移動
@@ -105,6 +108,8 @@ public class Player : MonoBehaviour
             playerHP -= enemy.AttackPower;
             if (playerHP <= 0)
             {
+                //マイナス表示にならないようにする。
+                playerHP = 0;
                 // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
                 FindObjectOfType<Manager>().GameOver();
 

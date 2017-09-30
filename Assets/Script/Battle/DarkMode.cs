@@ -9,4 +9,13 @@ public class DarkMode : MonoBehaviour {
     
     public static bool darkModeIs = false;
 
+    public static void DarkDamage()
+    {
+        //ダークモード時にHPを減らす
+        if (darkModeIs == true)
+        {
+            Player.playerHP -= Player.jikiHP / 950;
+
+        }
+    }
 }

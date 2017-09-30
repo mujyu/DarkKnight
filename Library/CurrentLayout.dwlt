@@ -62,8 +62,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 664
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -135,8 +135,8 @@ MonoBehaviour:
     y: 0
     width: 778
     height: 664
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 129
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 130
+  controlID: 12
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -545,10 +545,10 @@ MonoBehaviour:
   m_LastProjectPath: F:\SourceTree\DarkKnightStoryST
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c260000
-    m_LastClickedID: 9804
-    m_ExpandedIDs: 000000003a25000068250000ac26000032270000942700000a28000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: 4e260000
+    m_LastClickedID: 9806
+    m_ExpandedIDs: 000000003c2500006a250000ae260000342700000c28000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003a25000068250000ac26000032270000942700000a280000
+    m_ExpandedIDs: 000000003c2500006a250000ae260000342700000c280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -657,7 +657,7 @@ MonoBehaviour:
     y: 92
     width: 549
     height: 926
-  m_ScrollPosition: {x: 0, y: 265.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
@@ -692,23 +692,23 @@ MonoBehaviour:
     height: 643
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae250000
-    m_LastClickedID: 0
-    m_ExpandedIDs: dcfbffff0000000060280000
+    m_SelectedIDs: c8fbffff
+    m_LastClickedID: -1080
+    m_ExpandedIDs: dcfbffff0000000064280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Particle System
+      m_OriginalName: Particle System
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -29918
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -744,14 +744,14 @@ MonoBehaviour:
     width: 774
     height: 643
   m_SceneLighting: 1
-  lastFramingTime: 4876.221152312615
+  lastFramingTime: 3699.02318977781
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 918.12366, y: 599.536, z: 0}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 918.12366, y: 599.536, z: 0}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -778,9 +778,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1460.0729
+    m_Target: 14.013682
     speed: 2
-    m_Value: 1460.0729
+    m_Value: 14.013682
   m_Ortho:
     m_Target: 1
     speed: 2
