@@ -12,13 +12,8 @@ public class HPBar : MonoBehaviour {
         // スライダーを取得する
         slider = GameObject.Find("Slider").GetComponent<Slider>();
     }
-	
 	// Update is called once per frame
 	void Update () {
-        
+        //slider.value = Enemy.hp;
 	}
-    public void test()
-    {
-        slider.value = Player.playerHP;
-    }
 }

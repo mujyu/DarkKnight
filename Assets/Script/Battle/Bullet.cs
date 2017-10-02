@@ -17,12 +17,20 @@ public class Bullet : MonoBehaviour {
         if (DarkMode.darkModeIs == false)
         {
             power = 1;
-            speed = 8;
         }
         else if (DarkMode.darkModeIs == true)
         {
-            power = 4;
-            speed = 1;
+            if (Player.playerHP != 5000)
+            {
+                power = (Player.jikiHP - Player.playerHP) / 500 + 3;
+            }else if(Player.playerHP == 5000)
+            {
+                power = 3;
+            }
+            if (Player.playerHP <= 0)
+            {
+                power = 20;
+            }
         }
     }
     

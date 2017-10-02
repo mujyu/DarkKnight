@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class PlayDarkFrame : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private ParticleSystem pSystem;
+
+    void Start()
+    {
+        pSystem = GetComponent<ParticleSystem>();
+    }
+
+    void Update()
+    {
+        if (DarkMode.darkModeIs == true)
+        {
+            pSystem.Play();
+        }
+        else
+        {
+            pSystem.Stop();
+        }
+    }
 }

@@ -14,8 +14,15 @@ public class DarkMode : MonoBehaviour {
         //ダークモード時にHPを減らす
         if (darkModeIs == true)
         {
-            Player.playerHP -= Player.jikiHP / 950;
-
+            Player.playerHP -= 3;
+            if (Player.playerHP <= 0)
+            {
+                Player.playerHP = 0;
+            }
+        }
+        else
+        {
+            if (Player.playerHP < 5000)Player.playerHP++;
         }
     }
 }

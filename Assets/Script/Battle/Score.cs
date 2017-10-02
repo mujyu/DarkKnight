@@ -21,6 +21,9 @@ public class Score : MonoBehaviour
     // PlayerPrefsで保存するためのキー
     private string highScoreKey = "highScore";
 
+    //攻撃力を表示する
+    public Text attackText;
+
     void Start()
     {
         Initialize();
@@ -43,6 +46,7 @@ public class Score : MonoBehaviour
         {
             playerHPText.text = "Danger!!!!";
         }
+        attackText.text = "Attack:" + Bullet.power;
     }
 
     // ゲーム開始前の状態に戻す
@@ -62,11 +66,6 @@ public class Score : MonoBehaviour
 
     }
 
-    // ポイントの追加
-    public void AddPoint(int point)
-    {
-        score = score + point;
-    }
 
     // ハイスコアの保存
     public void Save()

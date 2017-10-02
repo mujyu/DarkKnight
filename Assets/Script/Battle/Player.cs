@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     public static int playerHP = jikiHP;
 
+    public int speed = 8;
+
     Enemy enemy = new Enemy();
     // Spaceshipコンポーネント
     Spaceship spaceship;
@@ -79,11 +81,11 @@ public class Player : MonoBehaviour
         Vector2 pos = transform.position;
 
         // 移動量を加える
-        pos += direction * spaceship.speed * Time.deltaTime;
+        pos += direction * speed * Time.deltaTime;
 
         // プレイヤーの位置が画面内に収まるように制限をかける
-        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
-        pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+        //pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+        //pos.y = Mathf.Clamp(pos.y, min.y, max.y);
 
         // 制限をかけた値をプレイヤーの位置とする
         transform.position = pos;
@@ -118,6 +120,11 @@ public class Player : MonoBehaviour
 
                 // プレイヤーを削除
                 Destroy(gameObject);
+            }
+            else
+            {
+                spaceship.GetAnimator().SetTrigger("Damage");
+                //spaceship.GetAnimator().SetTrigger("Attack");
             }
         }
     }

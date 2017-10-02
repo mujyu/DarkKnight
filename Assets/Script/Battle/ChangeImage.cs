@@ -22,6 +22,5 @@ public class ChangeImage : MonoBehaviour
         {
             DarkMode.darkModeIs = true;
         }
-        Debug.Log(DarkMode.darkModeIs);
     }
 }
