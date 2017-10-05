@@ -9,6 +9,9 @@ public class Score : MonoBehaviour
     // ハイスコアを表示するGUIText
     public Text highScoreText;
 
+    //残り体力の表示
+    public Text playerHPText;
+
     // スコア
     public static int score;
 
@@ -17,6 +20,9 @@ public class Score : MonoBehaviour
 
     // PlayerPrefsで保存するためのキー
     private string highScoreKey = "highScore";
+
+    //攻撃力を表示する
+    public Text attackText;
 
     void Start()
     {
@@ -34,6 +40,13 @@ public class Score : MonoBehaviour
         // スコア・ハイスコアを表示する
         scoreText.text = score.ToString();
         highScoreText.text = "HighScore : " + highScore.ToString();
+        //残り体力の表示
+        playerHPText.text = "HP:" + Player.playerHP.ToString();
+        if (Player.playerHP <= 0)
+        {
+            playerHPText.text = "Danger!!!!";
+        }
+        attackText.text = "Attack:" + Bullet.power;
     }
 
     // ゲーム開始前の状態に戻す
@@ -42,15 +55,17 @@ public class Score : MonoBehaviour
         // スコアを0に戻す
         score = 0;
 
+        //自機のHPを元に戻す
+        Player.playerHP = Player.jikiHP;
+
+        //ダークモードをfalseにする
+        DarkMode.darkModeIs = false;
+
         // ハイスコアを取得する。保存されてなければ0を取得する。
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+
     }
 
-    // ポイントの追加
-    public void AddPoint(int point)
-    {
-        score = score + point;
-    }
 
     // ハイスコアの保存
     public void Save()

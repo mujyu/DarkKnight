@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Enemy : MonoBehaviour
 {
-    public int hp = 20;
+    public int AttackPower = 700;
+    public int hp = 1000;
     // Spaceshipコンポーネント
     Spaceship spaceship;
     //Scoreコンポーネント
     Score score = new Score();
     // Bulletコンポーネント
     Bullet bullet = new Bullet();
+    
     int count = 0;
-    public int Boss1AttackScore = Bullet.power;
-    public int Boss1BombScore = 50;
     public int turningPoint = 500;//何カウントで上下移動の折り返しをするかを決める変数
 
     IEnumerator Start()
@@ -34,11 +35,17 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
+        EnemyMove();
+    }
+
+    //エネミーを上下に動かす
+    void EnemyMove()
+    {
         if (0 <= count && count <= turningPoint)
         {
             spaceship.Move(transform.up * -1);
         }
-        else if (turningPoint < count && count <= turningPoint * 2)
+        else if (turningPoint < count && count < turningPoint * 2)
         {
             spaceship.Move(transform.up * 1);
         }
@@ -65,18 +72,19 @@ public class Enemy : MonoBehaviour
         Destroy(c.gameObject);
 
         //スコアゲット
-        Score.score += Boss1AttackScore;
+        Score.score += Bullet.power;
 
         // ヒットポイントが0以下であれば
         if (hp <= 0)
         {
             //スコア加算
-            Score.score += Boss1BombScore;
+            Score.score += Bullet.power * 10;
             // 爆発
             spaceship.Explosion();
             // エネミーの削除
             Destroy(gameObject);
-        }else
+        }
+        else
         {
             spaceship.GetAnimator().SetTrigger("Damage");
         }

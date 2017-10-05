@@ -17,7 +17,7 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        // ゲーム中ではなく、Xキーが押されたらtrueを返す。
+        // ゲーム中ではない上で、タップされたらtrueを返す。
         if (IsPlaying() == false && Input.GetMouseButtonDown(0))
         {
             GameStart();

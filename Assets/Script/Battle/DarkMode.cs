@@ -9,10 +9,20 @@ public class DarkMode : MonoBehaviour {
     
     public static bool darkModeIs = false;
 
-	public void OnClick()
+    public static void DarkDamage()
     {
-        if (darkModeIs == false) darkModeIs = true;
-        else if (darkModeIs == true) darkModeIs = false;
+        //ダークモード時にHPを減らす
+        if (darkModeIs == true)
+        {
+            Player.playerHP -= 3;
+            if (Player.playerHP <= 0)
+            {
+                Player.playerHP = 0;
+            }
+        }
+        else
+        {
+            if (Player.playerHP < 5000)Player.playerHP++;
+        }
     }
-
 }

@@ -14,6 +14,5 @@ public class ChargeShot : MonoBehaviour {
     public void OnUp()
     { 
         Player.shootingIs = true;
-        Debug.Log("asd");
     }
 }
